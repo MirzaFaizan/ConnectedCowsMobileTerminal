@@ -42,7 +42,7 @@ class Toolbar extends PureComponent {
         <View>
           <Row style={styles.toolbarContainer}>
             <View style={styles.titleContainer}>
-              <Text style={styles.titleText}>My Checks</Text>
+              <Text style={styles.titleText}>Mirpur Farm House</Text>
             </View>
             <View style={styles.menuIconContainer}>
               <Ionicons name="md-menu" size={24} color="#008dff" />
