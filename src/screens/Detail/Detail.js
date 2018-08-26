@@ -15,6 +15,8 @@ import data from '../../data/data';
 import { ListItem, Row } from '../../components';
 import Toolbar from './Toolbar';
 import BottomBar from './BottomBar';
+import PureChart from 'react-native-pure-chart';
+
 
 class Detail extends PureComponent {
   constructor(props) {
@@ -73,6 +75,31 @@ class Detail extends PureComponent {
 
     const { items = [] } = selectedItem || {};
 
+    let sampleData = [
+      {x: '2018-01-01', y: 30},
+      {x: '2018-01-02', y: 200},
+      {x: '2018-01-03', y: 170},
+      {x: '2018-01-04', y: 20},
+      {x: '2018-01-05', y: 10}
+  ];
+
+  let sampleDataPie = [
+    {
+      value: 50,
+      label: 'Good',
+      color: '#008dff',
+    }, {
+      value: 40,
+      label: 'Moderate',
+      color: '#E0F2F1'
+    }, {
+      value: 25,
+      label: 'High',
+      color: '#E53935'
+    }
+
+  ]
+    
     if (!selectedItem) {
       return null;
     }
@@ -102,13 +129,23 @@ class Detail extends PureComponent {
             />
           </View>
         </SharedElement>
-        <FlatList
-          data={items}
-          dataExtra={phase}
-          keyExtractor={item => item.amount}
-          renderItem={this.renderItem}
-        />
-        <BottomBar isHidden={phase === 'phase-3'} />
+      
+          <TranslateYAndOpacity isHidden={phase !== 'phase-2'} delay={36}>
+            <View style={styles.itemContainer}>
+              <PureChart style={styles.itemContainer} data={sampleData} type='line' />
+              <View style={styles.rowContainer}>
+                <Text style={styles.vatText}>
+                    Temprature
+                </Text>
+              </View>
+            </View>
+            <View style={styles.rowContainer}>
+              <PureChart data={sampleDataPie} type='pie' />
+                <Text style={styles.vatText}>
+                  Chart Wise
+                </Text>
+            </View>
+          </TranslateYAndOpacity>
       </View>
     );
   }
@@ -124,7 +161,7 @@ const styles = StyleSheet.create({
   },
   itemContainer: {
     marginHorizontal: 16,
-    marginVertical: 8,
+    marginVertical: 10,
   },
   rowContainer: {
     alignItems: 'center',
