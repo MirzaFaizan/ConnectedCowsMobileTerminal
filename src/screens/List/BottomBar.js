@@ -61,13 +61,10 @@ class BottomBar extends PureComponent {
       >
         <Row style={styles.barContainer}>
           <View style={styles.iconContainer}>
-            <SimpleLineIcons name="present" size={24} color="#ddd" />
+            <MaterialIcons name="list" size={24} color="#008dff" />
           </View>
           <View style={styles.iconContainer}>
-            <Entypo name="wallet" size={24} color="#008dff" />
-          </View>
-          <View style={styles.iconContainer}>
-            <Ionicons name="md-qr-scanner" size={32} color="#ddd" />
+            <Entypo name="pie-chart" size={24} color="#ddd" />
           </View>
           <View style={styles.iconContainer}>
             <MaterialCommunityIcons name="message" size={24} color="#ddd" />

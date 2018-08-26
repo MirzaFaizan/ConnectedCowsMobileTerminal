@@ -2,8 +2,8 @@ import moment from 'moment';
 
 const data = [
   {
-    name: 'Hermes',
-    amount: '$1,500.67',
+    name: 'Cow # 1',
+    amount: '72°C',
     date: moment(),
     isReceived: false,
     items: [
@@ -26,8 +26,8 @@ const data = [
     ],
   },
   {
-    name: 'Philipp Plein',
-    amount: '$1,245.17',
+    name: 'Cow # 2',
+    amount: '68°C',
     date: moment(),
     isReceived: true,
     items: [
@@ -50,8 +50,8 @@ const data = [
     ],
   },
   {
-    name: 'L`Ocitane',
-    amount: '$545.28',
+    name: 'Cow # 3',
+    amount: '66°C',
     date: moment(),
     isReceived: true,
     items: [
@@ -74,8 +74,8 @@ const data = [
     ],
   },
   {
-    name: 'Kenzo',
-    amount: '$375.37',
+    name: 'Cow # 4',
+    amount: '90°C',
     date: moment(),
     isReceived: false,
     items: [
@@ -98,8 +98,8 @@ const data = [
     ],
   },
   {
-    name: 'Ray Ban',
-    amount: '$151.33',
+    name: 'Cow # 5',
+    amount: '69°C',
     date: moment(),
     isReceived: true,
     items: [

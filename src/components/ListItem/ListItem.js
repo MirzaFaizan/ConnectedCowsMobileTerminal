@@ -23,7 +23,7 @@ class ListItem extends PureComponent {
         <TouchableWithoutFeedback onPress={this.onPressed}>
           <View style={[styles.container, style]} pointerEvents="box-only">
             <Header name={name} isReceived={isReceived} />
-            <Content {...rest} />
+            <Content {...rest} isReceived={isReceived} />
           </View>
         </TouchableWithoutFeedback>
       </ScaleAndOpacity>
