@@ -9,12 +9,34 @@ import { ListItem } from '../../components';
 import data from '../../data/data';
 
 class List extends PureComponent {
+
+  
   constructor(props) {
     super(props);
 
-    this.state = { opacityOfSelectedItem: 1, selectedItem: null };
+    this.state = { opacityOfSelectedItem: 1, selectedItem: null, isLoading:true };
     this.sharedElementRefs = {};
   }
+
+  componentDidMount(){
+    return fetch('https://facebook.github.io/react-native/movies.json')
+      .then((response) => response.json())
+      .then((responseJson) => {
+        console.log(responseJson);
+        this.setState({
+          isLoading: false,
+          dataSource: responseJson.movies,
+        }, function(){
+        
+        });
+
+      })
+      .catch((error) =>{
+        console.error(error);
+      });
+  }
+
+
   onListItemPressed = item => {
     const { onItemPress } = this.props;
     this.setState({ selectedItem: item });
