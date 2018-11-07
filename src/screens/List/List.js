@@ -19,7 +19,7 @@ class List extends PureComponent {
   }
 
   componentDidMount(){
-    return fetch('https://facebook.github.io/react-native/movies.json')
+    return fetch('https://connectedcows.herokuapp.com/records/ShowRecords')
       .then((response) => response.json())
       .then((responseJson) => {
         console.log(responseJson);
